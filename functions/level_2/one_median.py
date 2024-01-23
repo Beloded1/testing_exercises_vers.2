@@ -14,3 +14,5 @@ def get_median_value(items: list[int]) -> int | None:
         return items[middle_index]
     else:
         return (items[middle_index] + items[middle_index + 1]) // 2
+
+
