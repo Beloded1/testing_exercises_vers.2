@@ -1,5 +1,5 @@
 from functions.level_2.one_pr_url import is_github_pull_request_url
-import pytest
+
 
 def test__is_github_pull_request_url__if_valid_url():
     assert is_github_pull_request_url('https://github.com/Beloded1/testing_exercises_vers.2.git/pull/1') == True
