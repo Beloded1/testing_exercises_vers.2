@@ -1,4 +1,6 @@
 from functions.level_3.models import Expense, ExpenseCategory, Currency, BankCard
+from functions.level_4.two_students import Student
+import pytest
 import decimal
 import datetime
 
@@ -21,7 +23,15 @@ def make_expenses(
     )
 
 
-
+@pytest.fixture
+def students() -> list[Student]:
+    return [
+        Student('John', 'Doe', '@johndoe'),
+        Student('Jane', 'Doe', '@janedoe'),
+        Student('Alice', 'Smith', None),
+        Student('Bob', 'Johnson', '@bobjohnson'),
+        Student('Charlie', 'Brown', '@charliebrown')
+    ]
 
 
 
