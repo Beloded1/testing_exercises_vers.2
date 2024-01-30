@@ -3,6 +3,7 @@ from functions.level_4.two_students import Student
 import pytest
 import decimal
 import datetime
+import os
 
 
 def make_expenses(
@@ -34,6 +35,16 @@ def students() -> list[Student]:
     ]
 
 
+@pytest.fixture
+def filepath(request):
+    lines, expected_result = request.param
+    path_to_file = 'test_file.txt'
+    with open(path_to_file, 'w') as file:
+        file.writelines([f'{line}\n' for line in lines])
+
+    yield path_to_file, expected_result
+
+    os.remove(path_to_file)
 
 
 
