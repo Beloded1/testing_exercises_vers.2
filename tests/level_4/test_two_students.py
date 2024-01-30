@@ -18,3 +18,8 @@ def test__get_student_by_tg_nickname__if_get_empty_student_list():
 )
 def test__get_student_by_tg_nickname__if_valid_input(students, nickname, result):
     assert get_student_by_tg_nickname(nickname, students) == result
+
+
+def test__get_student_by_tg_nickname__if_get_invalid_tg_username():
+    with pytest.raises(TypeError):
+        get_student_by_tg_nickname(123, students) == None
